@@ -1,0 +1,10 @@
+2026-05-21 01:15:42 | INFO | main:lifespan:49 - ============================================================
+2026-05-21 01:15:42 | INFO | main:lifespan:50 - 🚀 Starting RAG Document Intelligence Platform
+2026-05-21 01:15:42 | INFO | main:lifespan:51 - ============================================================
+2026-05-21 01:15:42 | INFO | main:lifespan:54 - Loading embedding model...
+2026-05-21 01:15:42 | INFO | main:lifespan:57 - ✅ Embedding model ready (dim=384)
+2026-05-21 01:15:42 | INFO | main:lifespan:60 - Connecting to ChromaDB...
+2026-05-21 01:15:42 | INFO | main:lifespan:64 - ✅ ChromaDB ready (0 vectors)
+2026-05-21 01:15:42 | INFO | main:lifespan:66 - ============================================================
+2026-05-21 01:15:42 | INFO | main:lifespan:67 - ✅ All systems ready. Accepting requests.
+2026-05-21 01:15:42 | INFO | main:lifespan:68 - ============================================================

@@ -1,0 +1,85 @@
+2026-05-21 01:15:23 | INFO | main:lifespan:49 - ============================================================
+2026-05-21 01:15:23 | INFO | main:lifespan:50 - 🚀 Starting RAG Document Intelligence Platform
+2026-05-21 01:15:23 | INFO | main:lifespan:51 - ============================================================
+2026-05-21 01:15:23 | INFO | main:lifespan:54 - Loading embedding model...
+2026-05-21 01:15:23 | INFO | main:lifespan:57 - ✅ Embedding model ready (dim=384)
+2026-05-21 01:15:23 | INFO | main:lifespan:60 - Connecting to ChromaDB...
+2026-05-21 01:15:23 | INFO | main:lifespan:64 - ✅ ChromaDB ready (0 vectors)
+2026-05-21 01:15:23 | INFO | main:lifespan:66 - ============================================================
+2026-05-21 01:15:23 | INFO | main:lifespan:67 - ✅ All systems ready. Accepting requests.
+2026-05-21 01:15:23 | INFO | main:lifespan:68 - ============================================================
+2026-05-21 01:16:56 | INFO | documents:upload_document:99 - Saved upload: uploads\Attention_Is_All_You_Need.pdf (2,215,244 bytes)
+2026-05-21 01:16:56 | INFO | document_service:ingest_document:104 - Starting ingestion: Attention_Is_All_You_Need.pdf → 9e4a9e63-2d67-44c7-96b7-85f91e077203
+2026-05-21 01:16:56 | INFO | document_service:ingest_document:109 -   PDF: 15 pages, 2,215,244 bytes
+2026-05-21 01:16:56 | INFO | extraction:extract_text_from_pdf:71 - Extracted 15 pages, 39,593 chars from Attention_Is_All_You_Need.pdf
+2026-05-21 01:16:56 | INFO | document_service:ingest_document:113 -   Extracted: 15 pages with text
+2026-05-21 01:16:56 | INFO | cleaning:clean_pages:85 - Cleaned 15 pages, removed 231 noise characters
+2026-05-21 01:16:56 | INFO | document_service:ingest_document:117 -   Cleaned: 15 pages retained
+2026-05-21 01:16:56 | INFO | chunking:chunk_pages:103 - Created 88 chunks from 15 pages (avg 474 chars/chunk)
+2026-05-21 01:16:56 | INFO | document_service:ingest_document:125 -   Chunked: 88 chunks created
+2026-05-21 01:16:56 | INFO | embedding:embed_batch:98 - Embedding 88 texts (batch_size=32)
+2026-05-21 01:17:01 | INFO | embedding:embed_batch:112 - Embedding complete. Shape: (88, 384)
+2026-05-21 01:17:01 | INFO | document_service:ingest_document:130 -   Embedded: 88 vectors generated
+2026-05-21 01:17:01 | INFO | vector_store:store_chunks:111 - Stored 88 chunks in ChromaDB. Total vectors: 88
+2026-05-21 01:17:01 | INFO | document_service:ingest_document:134 -   Stored: 88 vectors in ChromaDB
+2026-05-21 01:17:01 | INFO | document_service:ingest_document:149 - ✅ Ingestion complete: Attention_Is_All_You_Need.pdf → 88 chunks stored
+2026-05-21 01:17:28 | INFO | query:query_documents:58 - Query received: 'what is the pdf about ?...'
+2026-05-21 01:17:28 | INFO | rag_engine:query:82 - RAG query: 'what is the pdf about ?'
+2026-05-21 01:17:28 | INFO | retrieval:retrieve:54 - Embedding query: 'what is the pdf about ?...'
+2026-05-21 01:17:28 | INFO | vector_store:search:162 - Search returned 5 results (top score: 0.2114)
+2026-05-21 01:17:28 | INFO | retrieval:retrieve:71 - Filtered 5 results below threshold (0.3)
+2026-05-21 01:17:28 | INFO | retrieval:retrieve:79 - Retrieved 0 relevant chunks for query (threshold: 0.3)
+2026-05-21 01:17:28 | WARNING | rag_engine:query:92 - No relevant chunks found for query
+2026-05-21 01:17:28 | INFO | query:query_documents:77 - Query answered. Citations: 0, Chunks retrieved: 0
+2026-05-21 01:18:02 | INFO | query:query_documents:58 - Query received: '"What is the main model architecture proposed in this paper?"...'
+2026-05-21 01:18:02 | INFO | rag_engine:query:82 - RAG query: '"What is the main model architecture proposed in this paper?"'
+2026-05-21 01:18:02 | INFO | retrieval:retrieve:54 - Embedding query: '"What is the main model architecture proposed in this paper?"...'
+2026-05-21 01:18:02 | INFO | vector_store:search:162 - Search returned 5 results (top score: 0.4022)
+2026-05-21 01:18:02 | INFO | retrieval:retrieve:79 - Retrieved 5 relevant chunks for query (threshold: 0.3)
+2026-05-21 01:18:02 | ERROR | rag_engine:_call_llm:203 - Groq API call failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-05-21 01:18:02 | ERROR | query:query_documents:87 - RAG query failed: LLM call failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-05-21 01:18:29 | INFO | query:query_documents:58 - Query received: '"What is Multi-Head Attention and how does it work?"...'
+2026-05-21 01:18:29 | INFO | rag_engine:query:82 - RAG query: '"What is Multi-Head Attention and how does it work?"'
+2026-05-21 01:18:29 | INFO | retrieval:retrieve:54 - Embedding query: '"What is Multi-Head Attention and how does it work?"...'
+2026-05-21 01:18:29 | INFO | vector_store:search:162 - Search returned 5 results (top score: 0.6032)
+2026-05-21 01:18:29 | INFO | retrieval:retrieve:79 - Retrieved 5 relevant chunks for query (threshold: 0.3)
+2026-05-21 01:18:29 | ERROR | rag_engine:_call_llm:203 - Groq API call failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-05-21 01:18:29 | ERROR | query:query_documents:87 - RAG query failed: LLM call failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-05-21 01:19:23 | INFO | documents:upload_document:99 - Saved upload: uploads\MittiCard_Viva_Preparation.pdf (59,242 bytes)
+2026-05-21 01:19:23 | INFO | document_service:ingest_document:104 - Starting ingestion: MittiCard_Viva_Preparation.pdf → fb22c379-33df-4b0a-bc2e-9f1f322e3e7b
+2026-05-21 01:19:23 | INFO | document_service:ingest_document:109 -   PDF: 7 pages, 59,242 bytes
+2026-05-21 01:19:23 | INFO | extraction:extract_text_from_pdf:71 - Extracted 7 pages, 10,856 chars from MittiCard_Viva_Preparation.pdf
+2026-05-21 01:19:23 | INFO | document_service:ingest_document:113 -   Extracted: 7 pages with text
+2026-05-21 01:19:23 | INFO | cleaning:clean_pages:85 - Cleaned 7 pages, removed 24 noise characters
+2026-05-21 01:19:23 | INFO | document_service:ingest_document:117 -   Cleaned: 7 pages retained
+2026-05-21 01:19:23 | INFO | chunking:chunk_pages:103 - Created 25 chunks from 7 pages (avg 458 chars/chunk)
+2026-05-21 01:19:23 | INFO | document_service:ingest_document:125 -   Chunked: 25 chunks created
+2026-05-21 01:19:23 | INFO | embedding:embed_batch:98 - Embedding 25 texts (batch_size=32)
+2026-05-21 01:19:24 | INFO | embedding:embed_batch:112 - Embedding complete. Shape: (25, 384)
+2026-05-21 01:19:24 | INFO | document_service:ingest_document:130 -   Embedded: 25 vectors generated
+2026-05-21 01:19:24 | INFO | vector_store:store_chunks:111 - Stored 25 chunks in ChromaDB. Total vectors: 113
+2026-05-21 01:19:24 | INFO | document_service:ingest_document:134 -   Stored: 25 vectors in ChromaDB
+2026-05-21 01:19:24 | INFO | document_service:ingest_document:149 - ✅ Ingestion complete: MittiCard_Viva_Preparation.pdf → 25 chunks stored
+2026-05-21 01:19:52 | INFO | query:query_documents:58 - Query received: 'what are the languages used in frontend...'
+2026-05-21 01:19:52 | INFO | rag_engine:query:82 - RAG query: 'what are the languages used in frontend'
+2026-05-21 01:19:52 | INFO | retrieval:retrieve:54 - Embedding query: 'what are the languages used in frontend...'
+2026-05-21 01:19:52 | INFO | vector_store:search:162 - Search returned 5 results (top score: 0.3045)
+2026-05-21 01:19:52 | INFO | retrieval:retrieve:71 - Filtered 4 results below threshold (0.3)
+2026-05-21 01:19:52 | INFO | retrieval:retrieve:79 - Retrieved 1 relevant chunks for query (threshold: 0.3)
+2026-05-21 01:19:52 | ERROR | rag_engine:_call_llm:203 - Groq API call failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-05-21 01:19:52 | ERROR | query:query_documents:87 - RAG query failed: LLM call failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-05-21 01:24:03 | INFO | query:query_documents:58 - Query received: 'What is Multi-Head Attention and how does it work?"...'
+2026-05-21 01:24:03 | INFO | rag_engine:query:82 - RAG query: 'What is Multi-Head Attention and how does it work?"'
+2026-05-21 01:24:03 | INFO | retrieval:retrieve:54 - Embedding query: 'What is Multi-Head Attention and how does it work?"...'
+2026-05-21 01:24:03 | INFO | vector_store:search:162 - Search returned 5 results (top score: 0.6593)
+2026-05-21 01:24:03 | INFO | retrieval:retrieve:79 - Retrieved 5 relevant chunks for query (threshold: 0.3)
+2026-05-21 01:24:03 | ERROR | rag_engine:_call_llm:203 - Groq API call failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-05-21 01:24:03 | ERROR | query:query_documents:87 - RAG query failed: LLM call failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-05-21 01:24:11 | INFO | query:query_documents:58 - Query received: 'What is Multi-Head Attention and how does it work?...'
+2026-05-21 01:24:11 | INFO | rag_engine:query:82 - RAG query: 'What is Multi-Head Attention and how does it work?'
+2026-05-21 01:24:11 | INFO | retrieval:retrieve:54 - Embedding query: 'What is Multi-Head Attention and how does it work?...'
+2026-05-21 01:24:11 | INFO | vector_store:search:162 - Search returned 5 results (top score: 0.6591)
+2026-05-21 01:24:11 | INFO | retrieval:retrieve:79 - Retrieved 5 relevant chunks for query (threshold: 0.3)
+2026-05-21 01:24:11 | ERROR | rag_engine:_call_llm:203 - Groq API call failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-05-21 01:24:11 | ERROR | query:query_documents:87 - RAG query failed: LLM call failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-05-21 01:25:24 | INFO | main:lifespan:72 - Shutting down RAG platform...

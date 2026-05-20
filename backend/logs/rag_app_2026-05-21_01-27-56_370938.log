@@ -1,0 +1,18 @@
+2026-05-21 01:27:56 | INFO | main:lifespan:49 - ============================================================
+2026-05-21 01:27:56 | INFO | main:lifespan:50 - 🚀 Starting RAG Document Intelligence Platform
+2026-05-21 01:27:56 | INFO | main:lifespan:51 - ============================================================
+2026-05-21 01:27:56 | INFO | main:lifespan:54 - Loading embedding model...
+2026-05-21 01:27:56 | INFO | main:lifespan:57 - ✅ Embedding model ready (dim=384)
+2026-05-21 01:27:56 | INFO | main:lifespan:60 - Connecting to ChromaDB...
+2026-05-21 01:27:56 | INFO | main:lifespan:64 - ✅ ChromaDB ready (113 vectors)
+2026-05-21 01:27:56 | INFO | main:lifespan:66 - ============================================================
+2026-05-21 01:27:56 | INFO | main:lifespan:67 - ✅ All systems ready. Accepting requests.
+2026-05-21 01:27:56 | INFO | main:lifespan:68 - ============================================================
+2026-05-21 01:27:57 | INFO | query:query_documents:58 - Query received: 'What is Multi-Head Attention and how does it work?"...'
+2026-05-21 01:27:57 | INFO | rag_engine:query:82 - RAG query: 'What is Multi-Head Attention and how does it work?"'
+2026-05-21 01:27:57 | INFO | retrieval:retrieve:54 - Embedding query: 'What is Multi-Head Attention and how does it work?"...'
+2026-05-21 01:27:57 | INFO | vector_store:search:162 - Search returned 5 results (top score: 0.6593)
+2026-05-21 01:27:57 | INFO | retrieval:retrieve:79 - Retrieved 5 relevant chunks for query (threshold: 0.3)
+2026-05-21 01:27:58 | INFO | rag_engine:_call_llm:195 - LLM response received. Tokens: prompt=879, completion=347
+2026-05-21 01:27:58 | INFO | rag_engine:query:119 - RAG complete. 5 citations, avg_score=0.584
+2026-05-21 01:27:58 | INFO | query:query_documents:77 - Query answered. Citations: 5, Chunks retrieved: 5
