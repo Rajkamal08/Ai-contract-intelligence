@@ -3,7 +3,8 @@
  * All API calls in one place for maintainability.
  */
 
-const API_BASE = "http://127.0.0.1:8000/api";
+// Use VITE_API_URL from environment variables (set in Vercel), or fallback to local backend
+const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
 
 /**
  * Upload a PDF file for ingestion.

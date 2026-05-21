@@ -90,12 +90,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",   # Vite dev server
-        "http://localhost:3000",   # Alt React port
-        "http://127.0.0.1:5173",
-        "http://127.0.0.1:3000",
-    ],
+    allow_origins=["*"],  # Allow all origins for easy Vercel deployment (in production, set this to your Vercel URL)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
