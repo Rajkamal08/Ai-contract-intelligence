@@ -15,6 +15,7 @@ from datetime import datetime, timezone
 from fastapi import APIRouter, HTTPException, status
 from loguru import logger
 
+from config import settings
 from core.rag_engine import RAGEngine
 from models.schemas import (
     QueryRequest,
@@ -128,7 +129,7 @@ async def extract_structured_data(request: StructuredExtractionRequest):
         return ExtractionResponse(
             title=request.prompt_type,
             data=data,
-            model_used=_rag_engine.groq_client.models if hasattr(_rag_engine, "groq_client") else "groq-llama",
+            model_used=settings.llm_model_name,
         )
     except Exception as e:
         logger.error(f"Extraction failed: {e}")
